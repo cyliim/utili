@@ -56,4 +56,4 @@ client.on("message", async (message) => {
          member.addRole(role)
         
         });
-        bot.login(token).catch(err => console.log(err));
+        client.login(token).catch(err => console.log(err));
