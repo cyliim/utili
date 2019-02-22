@@ -22,6 +22,7 @@ client.on("message", async (message) => {
             .addField("**Poll**", "Starts a poll")
             .addField("**Respects**", "Pays respects.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
+            .addField(["**Support Server**"]("https://discord.gg/QHqJxMm")
             .setTimestamp()
             .setFooter("Created by brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
