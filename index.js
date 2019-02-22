@@ -58,4 +58,6 @@ client.on("message", async (message) => {
          member.addRole(role)
         
         });
+client.on("guildCreate", (guild) => {
+            client.channels.get("548601138182881281").send("Utili has joined a new guild: " + guild.name)});
         client.login(token).catch(err => console.log(err));
