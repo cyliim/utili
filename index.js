@@ -41,8 +41,8 @@ client.on("message", async (message) => {
         } else if (message.content.startsWith(`${prefix}poll` + arguments)) {
         message.react("👍");
         message.react("👎");
-        message.react("🤷"); {
-    } if (message.content.startsWith(`${prefix}avatar`)) {
+        message.react("🤷"); 
+    } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
             }
