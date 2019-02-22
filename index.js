@@ -19,7 +19,6 @@ client.on("message", async (message) => {
             .addField("**Roll**", "Rolls a die.")
             .addField("**Ping**", "Gets the ping of the bot.")
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
-            .addField("**Time**", "Shows the time and date in your location.")
             .addField("**Respects**", "Pays respects.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .setTimestamp()
@@ -35,8 +34,6 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}joke`)) {
         var repl = rand[Math.floor(Math.random()*rand.length)];
         message.channel.send(repl)
-    } else if (message.content.startsWith(`${prefix}time`)) {
-        message.channel.send("The time is " + new Date)
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
