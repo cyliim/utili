@@ -24,7 +24,7 @@ client.on("message", async (message) => {
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .addField("**Support Server**", ["Click here to join"]("https://discord.gg/QHqJxMm")
             .setTimestamp()
-            .setFooter("Created by brickman#4669", client.user.avatarURL);
+            .setFooter("Created by brickman#4669", client.user.avatarURL));
         message.channel.send(embed);
     } else if (message.content.startsWith(`${prefix}flip`)) {
         message.channel.send(Math.floor(Math.random() * 2) === 0 ? "Heads" : "Tails");
