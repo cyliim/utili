@@ -19,6 +19,7 @@ client.on("message", async (message) => {
             .addField("**Roll**", "Rolls a die.")
             .addField("**Ping**", "Gets the ping of the bot.")
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
+            .addField("**Poll**", "Starts a poll")
             .addField("**Respects**", "Pays respects.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .setTimestamp()
@@ -36,7 +37,11 @@ client.on("message", async (message) => {
         message.channel.send(repl)
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
-        message.channel.send("https://imgur.com/a/VH0QOkc")
+        message.channel.send("https://imgur.com/a/VH0QOkc");
+        } else if (message.content.startsWith(`${prefix}poll`))
+        message.react("👍");
+        message.react("👎");
+        message.react("🤷"); {
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
