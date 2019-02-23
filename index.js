@@ -41,7 +41,7 @@ client.on("message", async (message) => {
         } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
-        message.react("🤷"); 
+        message.react("🤷") 
          } if (message.content.startsWith(`${prefix}setautorole`)){
             if (message.member.hasPermission('ADMINISTRATOR')){
                 let args = message.content.split(" ").slice(1);
