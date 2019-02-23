@@ -19,7 +19,7 @@ client.on("message", async (message) => {
             .addField("**Roll**", "Rolls a die.")
             .addField("**Ping**", "Gets the ping of the bot.")
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
-            .addField("**Time**", "Shows the time and date in your location.")
+            .addField("**Poll**", "Starts a poll")
             .addField("**Respects**", "Pays respects.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .setTimestamp()
