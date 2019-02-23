@@ -41,17 +41,7 @@ client.on("message", async (message) => {
         } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
-        message.react("🤷") 
-         } if (message.content.startsWith(`${prefix}setautorole`)){
-            if (message.member.hasPermission('ADMINISTRATOR')){
-                let args = message.content.split(" ").slice(1);
-                autorole = args[0];
-                message.channel.send("Autorole has been set to " + autorole);
-            }
-            else {
-                return message.channel.send("Sorry, you need the admin role to perform this command.");
-            }}{
-            
+        message.react("🤷");        
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
