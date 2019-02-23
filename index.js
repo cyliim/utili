@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const token = process.env.token;
+const TOKEN = process.env.token;
 const prefix = "$";
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
 
 client.on('ready', () => {
-client.user.setActivity("$help | utili.glitch.me"); 
+client.user.setActivity("d$help"); 
 });
 client.on("message", async (message) => {
     if (message.content.startsWith(`${prefix}help`)) {
@@ -37,12 +37,14 @@ client.on("message", async (message) => {
         message.channel.send(repl)
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
-        message.channel.send("https://imgur.com/a/VH0QOkc") {
-        } else if (message.content.startsWith(`${prefix}poll`)) {
+        message.channel.send("https://imgur.com/a/VH0QOkc") 
+
+        } if (message.content.startsWith(`${prefix}poll` + arguments)) {
         message.react("👍");
         message.react("👎");
-        message.react("🤷");        
-    } else if (message.content.startsWith(`${prefix}avatar`)) {
+        message.react("🤷"); {
+
+    } if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
             }
@@ -51,12 +53,12 @@ client.on("message", async (message) => {
             });
             message.channel.send(avatarList);
             }
-        
-        });
+        }});
         client.on('guildMemberAdd', member =>{
          member.addRole(autorole)
-        
         });
-client.on("guildCreate", (guild) => {
-            client.channels.get("548601138182881281").send("Utili has joined a new guild: " + guild.name)});
+        client.on("guildCreate", (guild) => {
+            client.channels.get("548601138182881281").send("Utili has joined a new guild: " + guild.name)
+        });
+
         client.login(token).catch(err => console.log(err));
