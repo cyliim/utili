@@ -42,8 +42,7 @@ client.on("message", async (message) => {
         message.react("👍");
         message.react("👎");
         message.react("🤷"); 
-            
-             } if (message.content.startsWith(prefix + 'setautorole')){
+         } if (message.content.startsWith(`${prefix}setautorole`)){
             if (message.member.hasPermission('ADMINISTRATOR')){
                 let args = message.content.split(" ").slice(1);
                 autorole = args[0];
