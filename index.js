@@ -38,16 +38,6 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
-    } if (message.content.startsWith(prefix + 'setautorole')){
-            if (message.member.hasPermission('ADMINISTRATOR')){
-                let args = message.content.split(" ").slice(1);
-                autorole = args[0];
-                message.channel.send("Autorole has been set to " + autorole);
-            }
-            else {
-                return message.channel.send("Sorry you need the admin role to perform this command.");
-            }}{
-        
         } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
