@@ -42,6 +42,17 @@ client.on("message", async (message) => {
         message.react("👍");
         message.react("👎");
         message.react("🤷"); 
+            
+             } if (message.content.startsWith(prefix + 'setautorole')){
+            if (message.member.hasPermission('ADMINISTRATOR')){
+                let args = message.content.split(" ").slice(1);
+                autorole = args[0];
+                message.channel.send("Autorole has been set to " + autorole);
+            }
+            else {
+                return message.channel.send("Sorry, you need the admin role to perform this command.");
+            }}{
+            
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
@@ -54,8 +65,7 @@ client.on("message", async (message) => {
         
         });
         client.on('guildMemberAdd', member =>{
-         var role = member.guild.roles.find('name', 'Member');
-         member.addRole(role)
+         member.addRole(autorole)
         
         });
 client.on("guildCreate", (guild) => {
