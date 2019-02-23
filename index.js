@@ -37,9 +37,8 @@ client.on("message", async (message) => {
         message.channel.send(repl)
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
-        message.channel.send("https://imgur.com/a/VH0QOkc");
-        
-         } if (message.content.startsWith(prefix + 'setautorole')){
+        message.channel.send("https://imgur.com/a/VH0QOkc")
+    } if (message.content.startsWith(prefix + 'setautorole')){
             if (message.member.hasPermission('ADMINISTRATOR')){
                 let args = message.content.split(" ").slice(1);
                 autorole = args[0];
