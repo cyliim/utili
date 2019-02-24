@@ -47,8 +47,8 @@ client.on("message", async (message) => {
         message.react("🤷"); 
         } else if (message.content.startsWith(`${prefix}pun`))
     var repl = rand2[Math.floor(Math.random()*rand2.length)];
-    message.channel.send(repl) ;{
-    } else if (message.content.startsWith(`${prefix}avatar`)) {
+    message.channel.send(repl); {
+    } if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
             }
