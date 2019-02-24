@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const token = process.env.token;
 const prefix = "$";
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
+var rand2 = ["Pun enters a room, kills 10 people. ||Pun in, 10 dead||", "I don't know what LGBT stands for. ||I can never get a straight answer from anyone.", "What did Harry Potter say when he tripped over his broom while walking? ||Ouch! I Hur-my-knee!||","What do you call an obscene dust cloud? ||da rude sandstorm||", "If two vegetarians are fighting, ||can you still call it beef?||", "After your first child, ||your purpose in life will become apparent||", "Be kind to your dentist. ||They have fillings too!||", "Cannibals like to ||meat people||"]
 
 client.on('ready', () => {
 client.user.setActivity("utili.glitch.me | $help"); 
@@ -44,6 +45,9 @@ client.on("message", async (message) => {
         message.react("👍");
         message.react("👎");
         message.react("🤷"); 
+        } else if (message.content.startsWith(`${prefix}pun`))
+    var repl = rand2[Math.floor(Math.random()*rand2.length)];
+    message.channel.send(repl) ;{
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
