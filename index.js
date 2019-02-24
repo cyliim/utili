@@ -55,10 +55,10 @@ client.on("message", async (message) => {
             }
         
         });
-        client.on('guildMemberAdd', member =>{
-         var role = member.guild.roles.find('name', 'Member');
-         member.addRole(role)
-        });
+        //client.on('guildMemberAdd', member =>{
+         //var role = member.guild.roles.find('name', 'Member');
+         //member.addRole(role)
+        //});
         client.on("guildCreate", (guild) => {
             client.channels.get("548601138182881281").send("Utili has joined a new guild: " + guild.name)
         });
