@@ -38,7 +38,7 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
-    } if (message.content.startsWith(`${prefix}poll` + arguments)) {
+    } if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
         message.react("🤷"); 
