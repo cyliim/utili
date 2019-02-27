@@ -22,6 +22,7 @@ client.on("message", async (message) => {
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
             .addField("**Poll**", "Starts a poll")
             .addField("**Respects**", "Pays respects.")
+            .addField("**Pun**", "Tells a pun.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .setTimestamp()
             .setFooter("Created by brickman#4669", client.user.avatarURL);
