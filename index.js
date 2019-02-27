@@ -3,9 +3,10 @@ const client = new Discord.Client();
 const token = process.env.token;
 const prefix = "$";
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
+var pun =["The first computer dates back to Adam and Eve. It was an Apple with limited memory, just one byte. And then everything crashed.", "About a month before he died, my uncle had his back covered in lard. After that, he went down hill fast.", "Doctor, there`s a patient on line 1 who says hes invisible. Doctor: Well I cant see him right now.", "Thanks for explaining the word many to me, it means a lot.", "I got a new pair of gloves today, but they're both lefts which, on the one hand, is great, but on the other, its just not right."];
 
 client.on('ready', () => {
-client.user.setActivity("utili.glitch.me | $help"); 
+client.user.setActivity("brickman.glitch.me | $help"); 
 });
 client.on("message", async (message) => {
     if (message.content.startsWith(`${prefix}help`)) {
@@ -35,6 +36,9 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}joke`)) {
         var repl = rand[Math.floor(Math.random()*rand.length)];
         message.channel.send(repl)
+ } else if (message.content.startsWith(`${prefix}pun`)) {
+        var repl = pun[Math.floor(Math.random()*pun.length)];
+  message.channel.send(repl)
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
