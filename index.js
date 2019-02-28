@@ -26,7 +26,7 @@ client.on("message", async (message) => {
             .addField("**Pun**", "Tells a pun.")
             .addField("**8ball**", "Acts like a magic 8ball.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
-            .addField("**Support**", "Join the support server (here)[discord.gg/QHqJxMm].")
+            .addField("**Support**", "Join the support server [here](discord.gg/QHqJxMm).")
             .setTimestamp()
             .setFooter("Created by brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
