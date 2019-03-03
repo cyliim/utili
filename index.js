@@ -15,7 +15,7 @@ client.on("message", async (message) => {
         var embed = new Discord.RichEmbed()
             .setColor(0x252629)
             .setAuthor(client.user.username, client.user.avatarURL)
-            .setTitle("Help Menu")
+            .setTitle("Help Mnu")
             .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
             .addField("**Help**", "This command shows the help menu.")
             .addField("**Flip**", "Flips a coin.")
