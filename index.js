@@ -33,8 +33,6 @@ client.on("message", async (message) => {
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
-    } else if (message.content.startsWith(`${prefix}`)) { 
-        message.channel.send("Sorry, I don't know this command! Please use $help for a list of commands.
     } else if (message.content.startsWith(`${prefix}flip`)) {
         message.channel.send(Math.floor(Math.random() * 2) === 0 ? "Heads" : "Tails");
     } else if (message.content.startsWith(`${prefix}roll` + arguments)) {
@@ -74,6 +72,8 @@ client.on("message", async (message) => {
             });
             message.channel.send(avatarList);
             }
+      } else if (message.content.startsWith(`${prefix}`)) { 
+        message.channel.send("Sorry, I don't know this command! Please use $help for a list of commands.");
         
         });
         //client.on('guildMemberAdd', member =>{
