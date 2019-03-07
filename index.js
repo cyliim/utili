@@ -55,7 +55,7 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
-    } if (message.content.StartsWith(`${prefix}markup`)) {
+    } if (message.content.startsWith(`${prefix}markup`)) {
         message.channel.send("Markup is quite simple to remember.");
         message.channel.send("`*italics*, **bold**, ***bold italics***, __underline__, ~~strikethrough~~`");
         message.channel.send("` `inline`, ```codeblock``` `");
