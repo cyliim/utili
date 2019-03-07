@@ -5,7 +5,7 @@ const prefix = "$";
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
 var pun =["The first computer dates back to Adam and Eve. It was an Apple with limited memory, just one byte. And then everything crashed.", "About a month before he died, my uncle had his back covered in lard. After that, he went down hill fast.", "Doctor, there`s a patient on line 1 who says hes invisible. Doctor: Well I cant see him right now.", "Thanks for explaining the word many to me, it means a lot.", "I got a new pair of gloves today, but they're both lefts which, on the one hand, is great, but on the other, its just not right."];
 var ball =["It is certain..", "It is decidedly so.", "Without a doubt.", "Yes - definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", " Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."];
-var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Imports Camels From Australia"]
+var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Imports Camels From Australia", "A human can theoretically survive up to 6 months without sleeping", "Killer whales are the largest member of the dolphin family.", "Coffee beans come from berries that grow on plants", "Giraffes can clean their ears with their 21 inch long tongue", "America has been in war 93% of its existence."]
 
 client.on('ready', () => {
 client.user.setActivity("utili.glitch.me | $help"); 
@@ -28,6 +28,7 @@ client.on("message", async (message) => {
             .addField("**8ball**", "Acts like a magic 8ball.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .addField("**Fact**", "Says a fun fact.")
+            .addField("**Markup**", "Posts a discord markup tutorial")
             .addField("**Support**", "Join the support server [here](https://discord.gg/QHqJxMm).")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
@@ -54,6 +55,10 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
+    } if (message.content.StartsWith(`${prefix}markup`)) {
+        message.channel.send("Markup is quite simple to remember.")
+        message.channel.send("`*italics*, **bold**, ***bold italics***, __underline__, ~~strikethrough~~`")
+        message.channel.send("` `inline`, ```codeblock```")
     } if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
