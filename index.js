@@ -28,7 +28,7 @@ client.on("message", async (message) => {
             .addField("**8ball**", "Acts like a magic 8ball.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .addField("**Fact**", "Says a fun fact.")
-            .addField("**Markup**", "Posts a discord markup tutorial")
+            //.addField("**Markup**", "Posts a discord markup tutorial")
             .addField("**Support**", "Join the support server [here](https://discord.gg/QHqJxMm).")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
@@ -58,7 +58,7 @@ client.on("message", async (message) => {
     } if (message.content.startsWith(`${prefix}markup`)) {
         message.channel.send("Markup is quite simple to remember.");
         message.channel.send("`*italics*, **bold**, ***bold italics***, __underline__, ~~strikethrough~~`");
-        message.channel.send("` `inline`, ```codeblock``` `");
+        message.channel.send("` `inline` `, ``` ```codeblock``` ``` ");
     } if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
