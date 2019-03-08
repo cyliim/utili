@@ -90,7 +90,7 @@ client.on("message", async (message) => {
   //respects
          
     } else if (message.content.startsWith(`${prefix}respects`)) {
-        message.channel.send("https://imgur.com/a/VH0QOkc")
+        message.channel.send("https://imgur.com/a/VH0QOkc");
         
         //markup
         
