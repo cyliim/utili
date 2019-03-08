@@ -98,7 +98,7 @@ client.on("message", async (message) => {
       var embed = new Discord.RichEmbed()
         .setFooter("Created by Brickman#4669")
           .setImage("i.imgur/y2P3O0w")
-      message.channels.send(markup)
+      message.channel.send(markup)
                 //poll
         
     } else if (message.content.startsWith(`${prefix}poll`)) {
