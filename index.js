@@ -79,7 +79,7 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}markup`)) {
         var markup = new Discord.RichEmbed()
             .setColor(0x252629)
-        .setImage("https://imgur.com/gallery/y2P3O0w")
+        .setImage("https://ibb.co/YNSpqQm")
         .setTimestamp()
         .setFooter("Created by Brickman#4669")
                 message.channel.send(markup)
