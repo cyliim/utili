@@ -55,15 +55,12 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("Can we get an :regional_indicator_f: in chat")
         message.channel.send("https://imgur.com/a/VH0QOkc")
-    } if (message.content.startsWith(`${prefix}markup`)) {
+    } else if (message.content.startsWith(`${prefix}markup`)) {
         var markup = new Discord.RichEmbed()
             .setColor(0x252629)
         .setImage("https://imgur.com/a/y2P3O0w")
-            .setAuthor(client.user.username, client.user.avatarURL)
-            .setTimestamp()
-                .setFooter("Created by Brickman#4669")
                 message.channels.send(markup)
-    } if (message.content.startsWith(`${prefix}poll`)) {
+    } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
         message.react("🤷"); 
@@ -76,7 +73,7 @@ client.on("message", async (message) => {
             });
             message.channel.send(avatarList);
             
-      } if (message.content.startsWith(`${prefix}`)) { 
+      } else if (message.content.startsWith(`${prefix}`)) { 
         message.channel.send("Sorry, I don't know this command! Please use $help for a list of commands.");
         
         }});
