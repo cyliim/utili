@@ -36,7 +36,6 @@ client.on("message", async (message) => {
             .addField("**Ping**", "Gets the ping of the bot.")
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
             .addField("**Poll**", "Starts a poll")
-            .addField("**Respects**", "Pays respects.")
             .addField("**Pun**", "Tells a pun.")
             .addField("**8ball**", "Acts like a magic 8ball.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
@@ -86,19 +85,11 @@ client.on("message", async (message) => {
      } else if (message.content.startsWith(`${prefix}8ball`)) {
         var repl3 = ball[Math.floor(Math.random()*ball.length)];
   message.channel.send(repl3)
-         
-  //respects
-         
-    } else if (message.content.startsWith(`${prefix}respects`)) {
-        message.channel.send("https://imgur.com/a/VH0QOkc");
-        
+ 
         //markup
         
     } else if (message.content.startsWith(`${prefix}markup`)) {
-      var embed = new Discord.RichEmbed()
-        .setFooter("Created by Brickman#4669")
-          .setImage("i.imgur/y2P3O0w")
-      message.channel.send(markup)
+      message.channel.send("https://imgur.com/gallery/y2P3O0w")
                 //poll
         
     } else if (message.content.startsWith(`${prefix}poll`)) {
