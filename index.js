@@ -22,6 +22,7 @@ client.user.setActivity("utili.glitch.me | $help");
 //commands
 
 //help
+
 client.on("message", async (message) => {
     if (message.content.startsWith(`${prefix}help`)) {
         var embed = new Discord.RichEmbed()
@@ -45,44 +46,68 @@ client.on("message", async (message) => {
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
+        
         //flip
+        
     } else if (message.content.startsWith(`${prefix}flip`)) {
         message.channel.send(Math.floor(Math.random() * 2) === 0 ? "Heads" : "Tails");
+        
         //roll
+        
     } else if (message.content.startsWith(`${prefix}roll`)) {
         message.channel.send(`You rolled the number :game_die: ${Math.floor(Math.random() * 6) + 1}`);
+        
         //ping
+        
     } else if (message.content.startsWith(`${prefix}ping`)) {
         const m = await message.channel.send("Ping?");
         m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+        
         //joke
+        
     } else if (message.content.startsWith(`${prefix}joke`)) {
         var repl = rand[Math.floor(Math.random()*rand.length)];
         message.channel.send(repl)
+        
         //fact
+        
             } else if (message.content.startsWith(`${prefix}fact`)) {
         var repl4 = fact[Math.floor(Math.random()*fact.length)];
         message.channel.send(repl4)
+                
         //pun
+                
  } else if (message.content.startsWith(`${prefix}pun`)) {
         var repl2 = pun[Math.floor(Math.random()*pun.length)];
   message.channel.send(repl2)
+     
   //8ball
+     
      } else if (message.content.startsWith(`${prefix}8ball`)) {
         var repl3 = ball[Math.floor(Math.random()*ball.length)];
   message.channel.send(repl3)
+         
   //respects
+         
     } else if (message.content.startsWith(`${prefix}respects`)) {
         message.channel.send("https://imgur.com/a/VH0QOkc")
+        
         //markup
+        
     } else if (message.content.startsWith(`${prefix}markup`)) {
-        message.channel.send("https://imgur.com/gallery/y2P3O0w")
+      var embed = new Discord.RichEmbed()
+        .setFooter("Created by Brickman#4669")
+          .setImage("i.imgur/y2P3O0w")
+      message.channels.send(markup)
                 //poll
+        
     } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
         message.react("🤷"); 
+        
         //avatar
+        
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
