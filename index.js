@@ -73,8 +73,12 @@ client.on("message", async (message) => {
   message.channel.send(repl3)
   //respects
     } else if (message.content.startsWith(`${prefix}respects`)) {
-        message.channel.send("Can we get an :regional_indicator_f: in chat")
-        message.channel.send("https://imgur.com/a/VH0QOkc")
+     var respects = new Discord.RichEmbed()
+            .setColor(0x252629)
+        .setImage("https://imgur.com/a/VH0QOkc")
+        .setTimestamp()
+        .setFooter("Created by Brickman#4669")
+                message.channel.send(markup)
         //markup
     } else if (message.content.startsWith(`${prefix}markup`)) {
         var markup = new Discord.RichEmbed()
