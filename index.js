@@ -12,7 +12,7 @@ var ball =["It is certain..", "It is decidedly so.", "Without a doubt.", "Yes - 
 var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Imports Camels From Australia", "A human can theoretically survive up to 6 months without sleeping", "Killer whales are the largest member of the dolphin family.", "Coffee beans come from berries that grow on plants", "Giraffes can clean their ears with their 21 inch long tongue", "America has been in war 93% of its existence."]
 
 client.on('ready', () => {
-client.user.setActivity("utili.glitch.me | $help"); 
+client.user.setActivity("$help"); 
 });
 
 
