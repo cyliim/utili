@@ -75,6 +75,7 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}respects`)) {
      var respects = new Discord.RichEmbed()
             .setColor(0x252629)
+     .setTitle("Can we get an :regional_indicator_f: in chat?")
         .setImage("https://imgur.com/a/VH0QOkc")
         .setTimestamp()
         .setFooter("Created by Brickman#4669")
