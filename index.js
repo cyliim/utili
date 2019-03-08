@@ -73,21 +73,10 @@ client.on("message", async (message) => {
   message.channel.send(repl3)
   //respects
     } else if (message.content.startsWith(`${prefix}respects`)) {
-     var respects = new Discord.RichEmbed()
-            .setColor(0x252629)
-     .setTitle("Can we get an :regional_indicator_f: in chat?")
-        .setImage("https://imgur.com/a/VH0QOkc")
-        .setTimestamp()
-        .setFooter("Created by Brickman#4669")
-                message.channel.send(respects)
+        message.channel.send("https://imgur.com/a/VH0QOkc")
         //markup
     } else if (message.content.startsWith(`${prefix}markup`)) {
-        var markup = new Discord.RichEmbed()
-            .setColor(0x252629)
-        .setImage("https://imgur.com/gallery/y2P3O0w")
-        .setTimestamp()
-        .setFooter("Created by Brickman#4669")
-                message.channel.send(markup)
+        message.channel.send("https://imgur.com/gallery/y2P3O0w")
                 //poll
     } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
