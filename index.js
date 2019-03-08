@@ -95,7 +95,7 @@ client.on("message", async (message) => {
         //markup
         
     } else if (message.content.startsWith(`${prefix}markup`)) {
-     message.channel.send("https://imgur.com/gallery/y2P3O0w")
+     message.channel.send("https://imgur.com/a/y2P3O0w")
 
                 //poll
         
