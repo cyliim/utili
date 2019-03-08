@@ -62,6 +62,7 @@ client.on("message", async (message) => {
             .setAuthor(client.user.username, client.user.avatarURL)
             .setTimestamp()
                 .setFooter("Created by Brickman#4669")
+                message.channels.send(markup)
     } if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
         message.react("👎");
@@ -74,11 +75,11 @@ client.on("message", async (message) => {
             return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
             });
             message.channel.send(avatarList);
-            }
-      } else if (message.content.startsWith(`${prefix}`)) { 
+            
+      } if (message.content.startsWith(`${prefix}`)) { 
         message.channel.send("Sorry, I don't know this command! Please use $help for a list of commands.");
         
-        });
+        }});
         //client.on('guildMemberAdd', member =>{
          //var role = member.guild.roles.find('name', 'Member');
          //member.addRole(role)
