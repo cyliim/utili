@@ -80,7 +80,7 @@ client.on("message", async (message) => {
         var markup = new Discord.RichEmbed()
             .setColor(0x252629)
         .setImage("https://imgur.com/a/y2P3O0w")
-                message.channels.send(markup)
+                message.channel.send(markup)
                 //poll
     } else if (message.content.startsWith(`${prefix}poll`)) {
         message.react("👍");
