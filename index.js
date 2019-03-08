@@ -78,7 +78,7 @@ client.on("message", async (message) => {
         .setImage("https://imgur.com/a/VH0QOkc")
         .setTimestamp()
         .setFooter("Created by Brickman#4669")
-                message.channel.send(markup)
+                message.channel.send(respects)
         //markup
     } else if (message.content.startsWith(`${prefix}markup`)) {
         var markup = new Discord.RichEmbed()
