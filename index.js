@@ -7,12 +7,12 @@ var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", 
 //pun list
 var pun =["The first computer dates back to Adam and Eve. It was an Apple with limited memory, just one byte. And then everything crashed.", "About a month before he died, my uncle had his back covered in lard. After that, he went down hill fast.", "Doctor, there`s a patient on line 1 who says hes invisible. Doctor: Well I cant see him right now.", "Thanks for explaining the word many to me, it means a lot.", "I got a new pair of gloves today, but they're both lefts which, on the one hand, is great, but on the other, its just not right."];
 //8ball list
-var ball =["It is certain..", "It is decidedly so.", "Without a doubt.", "Yes - definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", " Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."]
+var ball =["It is certain..", "It is decidedly so.", "Without a doubt.", "Yes - definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", " Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."];
 //fact list
 var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Imports Camels From Australia", "A human can theoretically survive up to 6 months without sleeping", "Killer whales are the largest member of the dolphin family.", "Coffee beans come from berries that grow on plants", "Giraffes can clean their ears with their 21 inch long tongue", "America has been in war 93% of its existence."]
 
 client.on('ready', () => {
-client.user.setActivity("$help"); 
+client.user.setActivity("utili.glitch.me | $help"); 
 });
 
 
@@ -36,6 +36,7 @@ client.on("message", async (message) => {
             .addField("**Ping**", "Gets the ping of the bot.")
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
             .addField("**Poll**", "Starts a poll")
+            .addField("**Respects**", "Pays respects.")
             .addField("**Pun**", "Tells a pun.")
             .addField("**8ball**", "Acts like a magic 8ball.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
@@ -85,11 +86,17 @@ client.on("message", async (message) => {
      } else if (message.content.startsWith(`${prefix}8ball`)) {
         var repl3 = ball[Math.floor(Math.random()*ball.length)];
   message.channel.send(repl3)
- 
+         
+  //respects
+         
+    } else if (message.content.startsWith(`${prefix}respects`)) {
+        message.channel.send("Can we get an F in chat? https://imgur.com/a/VH0QOkc")
+        
         //markup
         
     } else if (message.content.startsWith(`${prefix}markup`)) {
-      message.channel.send("https://imgur.com/gallery/y2P3O0w")
+     message.channel.send("https://imgur.com/a/y2P3O0w")
+
                 //poll
         
     } else if (message.content.startsWith(`${prefix}poll`)) {
@@ -102,19 +109,11 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
-
-        } else if(message.content.startsWith(`${prefix}kick`)) {
-            if (!message.member.hasPermission('0x00000002'))
-            return message.channel.sendMessage("You need to have the 'kick' permission!")
-            else {
-                if(!member.mentions) {
-                    message.channel.send("Please target a user!")  
-                    member.kick(member.mentions)
-                    .then(() => (message.channel.send("Kicked user!")));
-                }
             }
-        }
+            const avatarList = message.mentions.users.map(user => {
+            return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
+            });
+            message.channel.send(avatarList);
             
-        
         }});
         client.login(token).catch(err => console.log(err));
