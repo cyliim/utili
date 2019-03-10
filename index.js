@@ -102,8 +102,19 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}avatar`)) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
+
+        } else if(message.content.startsWith(`${prefix}kick`)) {
+            if (!message.member.hasPermission('0x00000002'))
+            return message.channel.sendMessage("You need to have the 'kick' permission!")
+            else {
+                if(!member.mentions) {
+                    message.channel.send("Please target a user!")  
+                    member.kick(member.mentions)
+                    .then(() => (message.channel.send("Kicked user!")));
+                }
             }
+        }
             
-            
+        
         }});
         client.login(token).catch(err => console.log(err));
