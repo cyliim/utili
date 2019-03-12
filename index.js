@@ -36,7 +36,6 @@ client.on("message", async (message) => {
             .addField("**Ping**", "Gets the ping of the bot.")
             .addField("**Joke**", "Tells a random joke, courtesy of reddit")
             .addField("**Poll**", "Starts a poll")
-            .addField("**Respects**", "Pays respects.")
             .addField("**Pun**", "Tells a pun.")
             .addField("**8ball**", "Acts like a magic 8ball.")
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
