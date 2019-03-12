@@ -41,7 +41,7 @@ client.on("message", async (message) => {
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .addField("**Fact**", "Says a fun fact.")
             .addField("**Markup**", "Posts a discord markup tutorial")
-            .addField("**Info**". "DM's you with bot version/info")
+            .addField("**Info**", "DM's you with bot version/info")
             .addField("**Support**", "Join the support server [here](https://discord.gg/QHqJxMm).")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
