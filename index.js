@@ -114,6 +114,10 @@ client.on("message", async (message) => {
             return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
             });
             message.channel.send(avatarList);
+        
+        //info
             
+    } else if (message.content.startsWith(`${prefix}info')) {
+        message.author.send("Utili is currently on version 1.0, at the time of the introduction of this command.")
         }});
         client.login(token).catch(err => console.log(err));
