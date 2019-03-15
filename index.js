@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
-const prefix = "$";
+const prefix = ">";
 //joke list
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
 //pun list
@@ -12,7 +12,7 @@ var ball =["It is certain.", "It is decidedly so.", "Without a doubt.", "Yes - d
 var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Imports Camels From Australia", "A human can theoretically survive up to 6 months without sleeping", "Killer whales are the largest member of the dolphin family.", "Coffee beans come from berries that grow on plants", "Giraffes can clean their ears with their 21 inch long tongue", "America has been in war 93% of its existence."]
 
 client.on('ready', () => {
-client.user.setActivity("$help"); 
+client.user.setActivity(">help"); 
 });
 
 
@@ -118,7 +118,7 @@ client.on("message", async (message) => {
         //info
             
     } else if (message.content.startsWith(`${prefix}info`)) {
-        message.author.send("Utili is currently on version 1.0.2.");
+        message.author.send("Utili is currently on version 1.1.2.");
         message.reply("sent you a dm!")
         }});
         client.login(token).catch(err => console.log(err));
