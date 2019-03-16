@@ -35,7 +35,7 @@ client.on("message", async (message) => {
             .setAuthor(client.user.username, client.user.avatarURL)
             .setTitle("Help Menu")
             .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
-            .addField("The prefix for this server is " + prefix)
+            .addField("The prefix for this server is " + prefix + ".")
             .addField("**Help**", "This command shows the help menu.")
             .addField("**Flip**", "Flips a coin.")
             .addField("**Roll**", "Rolls a die.")
@@ -138,7 +138,7 @@ client.on("message", async (message) => {
         //info
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.send("Utili is currently on version 1.1.7.");
+        message.author.send("Utili is currently on version 1.1.5.");
         message.reply("sent you a dm!")
         }});
         client.login(token).catch(err => console.log(err));
