@@ -137,7 +137,7 @@ client.on("message", async (message) => {
         //info
             
     } else if (message.content.startsWith(`${prefix}info`)) {
-        message.author.send("Utili is currently on version 1.1.3.");
+        message.author.send("Utili is currently on version 1.1.5.");
         message.reply("sent you a dm!")
         }});
         client.login(token).catch(err => console.log(err));
