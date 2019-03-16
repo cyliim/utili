@@ -48,7 +48,7 @@ client.on("message", async (message) => {
             .addField("**Markup**", "Posts a discord markup tutorial")
             .addField("**Truth**", "Says a truth for a game of truth or dare")
             .addField("**Dare**", "Says a dare for a game of truth or dare")
-            .addField("**Info**", "DM's you with bot version/info")
+            .addField("**Version**", "DM's you with bot version")
             .addField("**Support**", "Join the support server [here](https://discord.gg/QHqJxMm).")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
@@ -136,7 +136,7 @@ client.on("message", async (message) => {
         
         //info
             
-    } else if (message.content.startsWith(`${prefix}info`)) {
+    } else if (message.content.startsWith(`${prefix}version`)) {
         message.author.send("Utili is currently on version 1.1.5.");
         message.reply("sent you a dm!")
         }});
