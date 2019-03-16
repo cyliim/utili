@@ -10,6 +10,10 @@ var pun =["The first computer dates back to Adam and Eve. It was an Apple with l
 var ball =["It is certain.", "It is decidedly so.", "Without a doubt.", "Yes - definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", " Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."];
 //fact list
 var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Imports Camels From Australia", "A human can theoretically survive up to 6 months without sleeping", "Killer whales are the largest member of the dolphin family.", "Coffee beans come from berries that grow on plants", "Giraffes can clean their ears with their 21 inch long tongue", "America has been in war 93% of its existence."]
+//truth list
+var truth =["What was the last thing you searched for on your phone?", "If you had to choose between going naked or having your thoughts appear in thought bubbles above your head for everyone to read, which would you choose?", "After you've dropped a piece of food, what's the longest time you've left it on the ground and then ate it?", "Have you ever tasted a booger?", "What's the first thing you would do if you woke up one day as the opposite gender?", "Have you ever peed in the pool?", "Have you ever farted in an elevator?", "What are some things you think about when sitting on the toilet?", "Did you have an imaginary friend growing up?", "Do you cover your eyes during a scary part in a movie?", "Have you ever practiced kissing in a mirror?"];
+//dare list
+var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
 
 client.on('ready', () => {
 client.user.setActivity(">help"); 
@@ -25,6 +29,7 @@ client.user.setActivity(">help");
 
 client.on("message", async (message) => {
     if (message.content.startsWith(`${prefix}help`)) {
+        message.channel.send("The prefix for this server is " + prefix)
         var embed = new Discord.RichEmbed()
             .setColor(0x252629)
             .setAuthor(client.user.username, client.user.avatarURL)
@@ -41,6 +46,8 @@ client.on("message", async (message) => {
             .addField("**Avatar**", "Shows either your avatar or the avatar of the person you pinged.")
             .addField("**Fact**", "Says a fun fact.")
             .addField("**Markup**", "Posts a discord markup tutorial")
+            .addField("**Truth**", "Says a truth for a game of truth or dare")
+            .addField("**Dare**", "Says a dare for a game of truth or dare")
             .addField("**Info**", "DM's you with bot version/info")
             .addField("**Support**", "Join the support server [here](https://discord.gg/QHqJxMm).")
             .setTimestamp()
@@ -80,7 +87,19 @@ client.on("message", async (message) => {
  } else if (message.content.startsWith(`${prefix}pun`)) {
         var repl2 = pun[Math.floor(Math.random()*pun.length)];
   message.channel.send(repl2)
+
+  //truth
      
+ } else if (message.content.startsWith(`${prefix}truth`)) {
+    var repl5 = truth[Math.floor(Math.random()*truth.length)];
+    message.channel.send(repl5)
+
+    //dare
+
+} else if (message.content.startsWith(`${prefix}dare`)) {
+    var repl6 = dare[Math.floor(Math.random()*dare.length)];
+    message.channel.send(repl6)
+
   //8ball
      
      } else if (message.content.startsWith(`${prefix}8ball`)) {
@@ -118,7 +137,7 @@ client.on("message", async (message) => {
         //info
             
     } else if (message.content.startsWith(`${prefix}info`)) {
-        message.author.send("Utili is currently on version 1.1.2.");
+        message.author.send("Utili is currently on version 1.1.3.");
         message.reply("sent you a dm!")
         }});
         client.login(token).catch(err => console.log(err));
