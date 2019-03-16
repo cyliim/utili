@@ -29,12 +29,13 @@ client.user.setActivity(">help");
 
 client.on("message", async (message) => {
     if (message.content.startsWith(`${prefix}help`)) {
-        message.channel.send("The prefix for this server is " + prefix)
+        
         var embed = new Discord.RichEmbed()
             .setColor(0x252629)
             .setAuthor(client.user.username, client.user.avatarURL)
             .setTitle("Help Menu")
             .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
+            .addField("The prefix for this server is " + prefix)
             .addField("**Help**", "This command shows the help menu.")
             .addField("**Flip**", "Flips a coin.")
             .addField("**Roll**", "Rolls a die.")
@@ -137,7 +138,7 @@ client.on("message", async (message) => {
         //info
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.send("Utili is currently on version 1.1.5.");
+        message.author.send("Utili is currently on version 1.1.6.");
         message.reply("sent you a dm!")
         }});
         client.login(token).catch(err => console.log(err));
