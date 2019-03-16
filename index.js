@@ -140,7 +140,5 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}version`)) {
         message.author.sendMessage("Utili is currently on version 1.1.7.");
         message.reply("sent you a dm!")
-    } else if {
-        message.channel.send("Sorry, I don't know this command! Please use " + prefix + "help for a list of commands.")
         }});
         client.login(token).catch(err => console.log(err));
