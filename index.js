@@ -168,7 +168,8 @@ client.on("message", async (message) => {
     } else if (message.content.startsWith(`${prefix}devhelp`)) {
         if (message.author.id !== '443992049746968586') {
             message.channel.send("<:utilicross:556718020152786944> You are not the developer!"); {
-                message.channel.send("Restart, ")
+                } if (message.author.id === '443992049746968586') {
+                (message.channel.send("Restart, ")) 
             }
         }
 
