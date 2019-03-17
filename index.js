@@ -24,6 +24,10 @@ const activities_list = [
     "Visual Studio Code",
     "with discord.js libraries",
     "with node.js",
+    "brickman.glitch.me",
+    "with Brickman",
+    "with github",
+    ">help",
 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
