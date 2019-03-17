@@ -15,20 +15,20 @@ var truth =["What was the last thing you searched for on your phone?", "If you h
 //dare list
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
 
-const activities_list = [
+const activities_list = [ 
     "with the >help command.", 
-    "with the developers console",
+    "with the developers console", 
     "with some code", 
-    "with JavaScript",
-    "version 1.2.9",
-    "Visual Studio Code",
-    "with discord.js libraries",
-    "with node.js",
-    "brickman.glitch.me",
-    "with Brickman",
-    "with github",
-    ">help",
-    "with you!",
+    "with JavaScript", 
+    "version 1.2.9", 
+    "Visual Studio Code", 
+    "with discord.js libraries", 
+    "with node.js", 
+    "brickman.glitch.me", 
+    "with Brickman", 
+    "with github", 
+    ">help", 
+    "with you!", 
     "a game",
 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
@@ -37,7 +37,7 @@ client.on('ready', () => {
     setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
         client.user.setActivity(activities_list[index]); 
-    }, 30000); 
+    }, 60000); 
 });
 
 //Brickman says hi!
@@ -155,10 +155,22 @@ client.on("message", async (message) => {
             });
             message.channel.send(avatarList);
         
-        //info
+        //version
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.sendMessage("Utili is currently on version 1.2.9.");
+        message.author.sendMessage("Utili is currently on version 1.1.8.");
         message.reply("sent you a dm!")
+
+        //dev commands
+
+        //dev help
+
+    } else if (message.content.startsWith(`${prefix}devhelp`)) {
+        if (message.author.id !== '443992049746968586') {
+            message.channel.send("<:utilicross:556718020152786944> You are not the developer!"); {
+                message.channel.send("Restart, ")
+            }
+        }
+
         }});
         client.login(token).catch(err => console.log(err));
