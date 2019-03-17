@@ -158,7 +158,7 @@ client.on("message", async (message) => {
         //version
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.sendMessage("Utili is currently on version 1.1.8.");
+        message.author.sendMessage("Utili is currently on version 1.2.10.");
         message.reply("sent you a dm!")
 
         //dev commands
