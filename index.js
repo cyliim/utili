@@ -30,6 +30,7 @@ const activities_list = [
     ">help", 
     "with you!", 
     "a game",
+    "with " + client.guilds.size + " users!",
 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
