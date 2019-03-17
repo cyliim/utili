@@ -20,7 +20,7 @@ const activities_list = [
     "with the developers console",
     "with some code", 
     "with JavaScript",
-    "version 1.1.8",
+    "version 1.2.9",
     "Visual Studio Code",
 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
