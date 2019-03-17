@@ -166,6 +166,14 @@ client.on("message", async (message) => {
             message.channel.send("<:utilicross:556723032400461824> You are not the developer!"); 
                 } else if (message.author.id === '443992049746968586') {
                 (message.channel.send("Restart, ")) 
+                } else if (message.content.startsWith(`${prefix}restart`))
+                    function resetBot(channel) {
+    // send channel a message that you're resetting bot [optional]
+    message.channel.send('Resetting...')
+    .then(msg => client.destroy())
+    .then(() => client.login(token));
+}
+
             }
         }
 
