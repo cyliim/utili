@@ -22,6 +22,8 @@ const activities_list = [
     "with JavaScript",
     "version 1.2.9",
     "Visual Studio Code",
+    "with discord.js libraries",
+    "with node.js",
 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
