@@ -89,7 +89,7 @@ client.on("message", async (message) => {
         
     } else if (message.content.startsWith(`${prefix}ping`)) {
         const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+        m.edit(`<:utilicheck:556723061467119637> Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
         
         //joke
         
@@ -126,12 +126,7 @@ client.on("message", async (message) => {
      } else if (message.content.startsWith(`${prefix}8ball`)) {
         var repl3 = ball[Math.floor(Math.random()*ball.length)];
   message.channel.send(repl3)
-         
-  //respects
-         
-    } else if (message.content.startsWith(`${prefix}respects`)) {
-        message.channel.send("Can we get an F in chat? https://imgur.com/a/VH0QOkc")
-        
+
         //markup
         
     } else if (message.content.startsWith(`${prefix}markup`)) {
@@ -158,8 +153,8 @@ client.on("message", async (message) => {
         //version
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.sendMessage("Utili is currently on version 1.2.10.");
-        message.reply("sent you a dm!")
+        message.author.sendMessage("Utili is currently on version 1.1.8.");
+        message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
         //dev commands
 
@@ -167,7 +162,7 @@ client.on("message", async (message) => {
 
     } else if (message.content.startsWith(`${prefix}devhelp`)) {
         if (message.author.id !== '443992049746968586') {
-            message.channel.send("<:utilicross:556718020152786944> You are not the developer!"); 
+            message.channel.send("<:utilicross:556723032400461824> You are not the developer!"); 
                 } else if (message.author.id === '443992049746968586') {
                 (message.channel.send("Restart, ")) 
             }
