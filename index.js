@@ -14,7 +14,7 @@ var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Impor
 var truth =["What was the last thing you searched for on your phone?", "If you had to choose between going naked or having your thoughts appear in thought bubbles above your head for everyone to read, which would you choose?", "After you've dropped a piece of food, what's the longest time you've left it on the ground and then ate it?", "Have you ever tasted a booger?", "What's the first thing you would do if you woke up one day as the opposite gender?", "Have you ever peed in the pool?", "Have you ever farted in an elevator?", "What are some things you think about when sitting on the toilet?", "Did you have an imaginary friend growing up?", "Do you cover your eyes during a scary part in a movie?", "Have you ever practiced kissing in a mirror?"];
 //dare list
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
-client.on('ready', () => {
+
 const activities_list = [ 
     "with the >help command.", 
     "with the developers console", 
