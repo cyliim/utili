@@ -28,6 +28,8 @@ const activities_list = [
     "with Brickman",
     "with github",
     ">help",
+    "with you!",
+    "a game",
 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
