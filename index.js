@@ -177,6 +177,8 @@ client.on("message", async (message) => {
     .addBlankField(true)
     .addField("Percent", Math.floor(bots / member * 10000)/ 100, true)
     .addBlankField(true)
+    .setTimestamp()
+    .setFooter("Created by Brickman#4669", client.user.avatarURL);
     message.channel.send(embed3)
         //dev commands
 
