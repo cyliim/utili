@@ -157,29 +157,6 @@ client.on("message", async (message) => {
         message.author.sendMessage("Utili is currently on version 1.1.8.");
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
-        //serverinfo
-        
-    } else if (message.content.startsWith(`${prefix}serverinfo`)) {
-    let members = guild.memberCount;
-    let users = guild.members.filter(member => !member.user.bot).size;
-    let bots = guild.members.filter(member => member.user.bot).size;
-    var embed3 = new Discord.RichEmbed()
-    .setTitle("Server Info")
-    .setAuthor(
-        `${guild.name} | (${guild.id})`, guild.iconURL)
-    .setColor(`0x252629`)
-    .addField('Server Owner', guild.owner, true)
-    .addField('Server Region', guild.region, true)
-    .addField('Channel Count', guild.channel.size, true)
-    .addField("Members", members, true)
-    .addField("Humans", users, true)
-    .addField("Bots", bots, true)
-    .addBlankField(true)
-    .addField("Percent", Math.floor(bots / member * 10000)/ 100, true)
-    .addBlankField(true)
-    .setTimestamp()
-    .setFooter("Created by Brickman#4669", client.user.avatarURL);
-    message.channel.send(embed3)
         //dev commands
 
         //dev help
@@ -189,13 +166,31 @@ client.on("message", async (message) => {
             message.channel.send("<:utilicross:556723032400461824> You are not the developer!"); 
                 } else if (message.author.id === '443992049746968586') {
                 (message.channel.send("Restart, ")) 
-                } else if (message.content.startsWith(`${prefix}restart`))
-                    function resetBot(channel) {
-    // send channel a message that you're resetting bot [optional]
-    message.channel.send('Resetting...')
-    .then(msg => client.destroy())
-    .then(() => client.login(token));
+                    
+                    //eval
+                    
+                } else if (message.content.startsWith(`${prefix}eval`))
+                    function clean(text) {
+  if (typeof(text) === "string")
+    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+  else
+      return text;
 }
+        try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+ 
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+ 
+      message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    }
+  }
+}
+
+
 
             }
         }
