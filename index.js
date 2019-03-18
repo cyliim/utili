@@ -159,7 +159,7 @@ client.on("message", async (message) => {
 
         //serverinfo
         
-    } else if (message.content.startsWith(`${prefix}serverinfo)) {
+    } else if (message.content.startsWith(`${prefix}serverinfo`)) {
     let members = guild.memberCount;
     let users = guild.members.filter(member => !member.user.bot).size;
     let bots = guild.members.filter(member => member.user.bot).size;
@@ -198,5 +198,5 @@ client.on("message", async (message) => {
             }
         }
 
-        });
+    );
         client.login(token).catch(err => console.log(err));
