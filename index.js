@@ -169,7 +169,8 @@ client.on("message", async (message) => {
                     
                     //eval
                     
-                } else if (message.content.startsWith(`${prefix}eval`))
+                } else if (message.content.startsWith(`${prefix}eval`)) {
+                     const args = message.content.split(" ").slice(1);
                     function clean(text) {
   if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
