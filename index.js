@@ -157,6 +157,27 @@ client.on("message", async (message) => {
         message.author.sendMessage("Utili is currently on version 1.1.8.");
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
+        //serverinfo
+        
+    } else if (message.content.startsWith(`${prefix}serverinfo)) {
+    let members = guild.memberCount;
+    let users = guild.members.filter(member => !member.user.bot).size;
+    let bots = guild.members.filter(member => member.user.bot).size;
+    const embed3 = new Discord.RichEmbed()
+    .setTitle("Server Info")
+    .setAuthor(
+        `${guild.name} | (${guild.id})`, guild.iconURL)
+    .setColor(`0x252629`)
+    .addField('Server Owner', guild.owner, true)
+    .addField('Server Region', guild.region, true)
+    .addField('Channel Count', guild.channel.size, true)
+    .addField("Members", members, true)
+    .addField("Humans", users, true)
+    .addField("Bots", bots, true)
+    .addBlankField(true)
+    .addField("Percent", Math.floor(bots / member * 10000)/ 100, true)
+    .addBlankField(true)
+    message.channel.send(embed3)
         //dev commands
 
         //dev help
