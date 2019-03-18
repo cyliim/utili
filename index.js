@@ -163,7 +163,7 @@ client.on("message", async (message) => {
     let members = guild.memberCount;
     let users = guild.members.filter(member => !member.user.bot).size;
     let bots = guild.members.filter(member => member.user.bot).size;
-    const embed3 = new Discord.RichEmbed()
+    var embed3 = new Discord.RichEmbed()
     .setTitle("Server Info")
     .setAuthor(
         `${guild.name} | (${guild.id})`, guild.iconURL)
@@ -177,7 +177,6 @@ client.on("message", async (message) => {
     .addBlankField(true)
     .addField("Percent", Math.floor(bots / member * 10000)/ 100, true)
     .addBlankField(true)
-    .addFooter("Created by Brickman#4669"
     message.channel.send(embed3)
         //dev commands
 
