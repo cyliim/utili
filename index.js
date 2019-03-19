@@ -17,7 +17,7 @@ var truth =["What was the last thing you searched for on your phone?", "If you h
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
 
 client.on('ready', () => {
-          client.user.setActivity(client.guilds.size + " servers | Version " + version);
+          client.user.setActivity("with " + client.guilds.size + " servers | Version " + version);
           });
 
 //Brickman says hi!
