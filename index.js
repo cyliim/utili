@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
 const prefix = ">";
+var version = "2.1.10"
 //joke list
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
 //pun list
@@ -16,7 +17,7 @@ var truth =["What was the last thing you searched for on your phone?", "If you h
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
 
 client.on('ready', () => {
-          client.user.setActivity(client.guilds.size + "servers");
+          client.user.setActivity(client.guilds.size + " servers" | "Version " + version);
           });
 
 //Brickman says hi!
@@ -132,7 +133,7 @@ client.on("message", async (message) => {
         //version
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.sendMessage("Utili is currently on version 1.2.10.");
+        message.author.sendMessage("Utili is currently on version " + version);
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
         //dev commands
