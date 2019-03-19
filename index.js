@@ -82,7 +82,7 @@ client.on("message", async (message) => {
         message.channel.send(Math.floor(Math.random() * 2) === 0 ? "Heads" : "Tails");
         
         //roll
-        
+     
     } else if (message.content.startsWith(`${prefix}roll`)) {
         message.channel.send(`You rolled the number :game_die: ${Math.floor(Math.random() * 6) + 1}`);
         
