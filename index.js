@@ -20,7 +20,7 @@ const activities_list = [
     "with the developers console", 
     "with some code", 
     "with JavaScript", 
-    "version 1.2.9", 
+    "version 1.2.10", 
     "Visual Studio Code", 
     "with discord.js libraries", 
     "with node.js", 
@@ -154,7 +154,7 @@ client.on("message", async (message) => {
         //version
             
     } else if (message.content.startsWith(`${prefix}version`)) {
-        message.author.sendMessage("Utili is currently on version 1.1.8.");
+        message.author.sendMessage("Utili is currently on version 1.2.10.");
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
         //dev commands
