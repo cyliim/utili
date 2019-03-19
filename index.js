@@ -15,30 +15,8 @@ var truth =["What was the last thing you searched for on your phone?", "If you h
 //dare list
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
 
-const activities_list = [ 
-    "with the >help command.", 
-    "with the developers console", 
-    "with some code", 
-    "with JavaScript", 
-    "version 1.2.10", 
-    "Visual Studio Code", 
-    "with discord.js libraries", 
-    "with node.js", 
-    "brickman.glitch.me", 
-    "with Brickman", 
-    "with github", 
-    ">help", 
-    "with you!", 
-    "a game",
-    "with " + client.guilds.length + " servers!",
-
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
-
 client.on('ready', () => {
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
-        client.user.setActivity(activities_list[index]); 
-    }, 10000); 
+    client.user.setPresence({ game: { name: `${client.guilds.size} servers`, type: `Watching` } });
 });
 
 //Brickman says hi!
