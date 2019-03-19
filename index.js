@@ -15,9 +15,7 @@ var truth =["What was the last thing you searched for on your phone?", "If you h
 //dare list
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
 
-client.on('ready', () => {
-    client.user.setPresence({ game: { name: `${client.guilds.size} servers`, type: `Watching` } });
-});
+client.user.setActivity(client.guilds.size + "servers | " + client.guilds.size + " users"
 
 //Brickman says hi!
 
@@ -60,7 +58,7 @@ client.on("message", async (message) => {
         message.channel.send(Math.floor(Math.random() * 2) === 0 ? "Heads" : "Tails");
         
         //roll
-     
+        
     } else if (message.content.startsWith(`${prefix}roll`)) {
         message.channel.send(`You rolled the number :game_die: ${Math.floor(Math.random() * 6) + 1}`);
         
