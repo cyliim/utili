@@ -134,16 +134,7 @@ client.on("message", async (message) => {
             message.channel.send(avatarList);
 
           
-         } else if (message.content.startsWith(`${prefix}play`)) {
-            if (!message.member.voiceChannel) message.channel.send("<:utilicross:556723032400461824> Please connect to a voice channel");
-            if (message.guild.me.voiceChannel) message.channel.send("<:utilicross:556723032400461824> I am already connected to a voice channel");
-            if (!args[0]) return message.channel.send("<:utilicross:556723032400461824> Please provide a valid video URL after the command");
-            let validate = await ytdl.validateURL(args[0]);
-            if (!validate) return message.channel.send ("<:utilicross:556723032400461824> This url is not valid. Please input a __valid__ url following the command");
-            let info = await ytdl.getInfo(args[0]);
-            let connection = await message.member.voiceChannel.join();
-            let dispatcher = await connection.play(ytdl(args[0], { filter: "audioonly" }));
-            message.channel.send(`<:utilicheck:556723061467119637> Now playing: ${info.title}`);
+       
     } else if (message.content.startsWith(`${prefix}version`)) {
         message.author.sendMessage("Utili is currently on version " + version);
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
