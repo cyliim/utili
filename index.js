@@ -2,8 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
 const prefix = ">";
-const Enmap = require('enmap');
-
+const ytdl = require("ytdl-core")
 var version = "1.2.12"
 //joke list
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
@@ -17,32 +16,7 @@ var fact =["Sharks can’t breathe if they aren’t moving", "Saudi Arabia Impor
 var truth =["What was the last thing you searched for on your phone?", "If you had to choose between going naked or having your thoughts appear in thought bubbles above your head for everyone to read, which would you choose?", "After you've dropped a piece of food, what's the longest time you've left it on the ground and then ate it?", "Have you ever tasted a booger?", "What's the first thing you would do if you woke up one day as the opposite gender?", "Have you ever peed in the pool?", "Have you ever farted in an elevator?", "What are some things you think about when sitting on the toilet?", "Did you have an imaginary friend growing up?", "Do you cover your eyes during a scary part in a movie?", "Have you ever practiced kissing in a mirror?"];
 //dare list
 var dare =["Go into your most recent DM and spam 'POOP' 10 times", "Go into voice and yell something of your choice", "Call a random person on Discord and sing Happy Birthday to them", "Go into a group dm and start a call, then sing Rick Astley", "Ask someone of your choice how to get Discord", "Change your pfp to the darer's choice"]
-client.settings = new Enmap({
-    name: "settings",
-    fetchAll: false,
-    autoFetch: true,
-    cloneLevel: 'deep'
-});
 
-  const defaultSettings = {
-    prefix: "!",
-       modLogChannel: "mod-log",
-  modRole: "Moderator",
-  adminRole: "Administrator",
-    welcomeChannel: "welcome",
-    welcomeMessage: "Say hello to {{user}}, everyone!"
-  }
-  client.on("guildDelete", guild => {
-  client.settings.delete(guild.id);
-});
-client.on("guildMemberAdd", member => {
-     client.settings.ensure(member.guild.id, defaultSettings);
-     welcomeMessage = welcomeMessage.replace("{{user}}", member.user.tag)
-     member.guild.channels
-    .find("name", client.settings.get(member.guild.id, "welcomeChannel"))
-    .send(welcomeMessage)
-    .catch(console.error);
-});
 client.on('ready', () => {
           client.user.setActivity("in " + client.guilds.size + " servers | Version " + version);
           });
@@ -55,7 +29,7 @@ client.on('ready', () => {
 //help
 
 client.on("message", async (message) => {
-      if(!message.guild || message.author.bot) return;
+
     if (message.content.startsWith(`${prefix}help`)) {
         
         var embed = new Discord.RichEmbed()
@@ -82,11 +56,7 @@ client.on("message", async (message) => {
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
-        
-         const guildConf = client.settings.ensure(message.guild.id, defaultSettings);
-          if(message.content.indexOf(guildConf.prefix) !== 0) return;
-const args = message.content.split(/\s+/g);
-  const command = args.shift().slice(guildConf.prefix.length).toLowerCase()
+ 
         
         //flip
         
@@ -162,8 +132,20 @@ const args = message.content.split(/\s+/g);
             return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
             });
             message.channel.send(avatarList);
-        
-        //version
+
+
+         } else if (message.content.startsWith(`${prefix}play`)) {
+             if (!message.member.voiceChannel) return message.channel.send("<:utilicross:556723032400461824> Please connect to a voice channel");
+            if (message.guild.me.voiceChannel) return message.channel.send("<:utilicross:556723032400461824> I am already connected to a voice channel");
+            if (!args[0]) return message.channel.send("<:utilicross:556723032400461824> Please provide a valid video URL after the command");
+            let validate = await ytdl.validateURL(args[0]);
+            if (!validate) return message.channel.send ("<:utilicross:556723032400461824> This url is not valid. Please input a __valid__ url following the command");
+            let info = await ytdl.getInfo(args[0]);
+            let connection = await message.member.voiceChannel.join();
+            let dispatcher = await connection.play(ytdl(args[0], { filter: "audioonly" }));
+            message.channel.send(`<:utilicheck:556723061467119637> Now playing: ${info.title}`);
+         }
+
             
     } else if (message.content.startsWith(`${prefix}version`)) {
         message.author.sendMessage("Utili is currently on version " + version);
@@ -180,10 +162,7 @@ const args = message.content.split(/\s+/g);
                 (message.channel.send("<:utilicross:556723032400461824> Nothing to see here just yet!")) 
             }
         }
-        client.on('guildCreate', guild => {
-            server.createChannel("welcome", "text");
-            server.createChannel("mod-log", "text");
-        });
+
 });
 
 
