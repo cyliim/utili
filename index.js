@@ -2,6 +2,18 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
 const prefix = ">";
+const Enmap = require('enmap');
+client.settings = new Enmap({
+  name: "settings",
+  fetchAll: false,
+  autoFetch: true,
+  cloneLevel: 'deep'
+const defaultSettings = {
+  prefix: "!",
+  welcomeChannel: "welcome",
+  welcomeMessage: "Say hello to {{user}}, everyone!"
+}
+
 var version = "1.2.12"
 //joke list
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
@@ -149,4 +161,8 @@ client.on("message", async (message) => {
         }
 
 });
+client.on('guildCreate', guild => {
+              server.createChannel("welcome", "text");
+}
+
         client.login(token).catch(err => console.log(err));
