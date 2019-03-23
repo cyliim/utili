@@ -23,12 +23,26 @@ client.settings = new Enmap({
     autoFetch: true,
     cloneLevel: 'deep'
 });
+
   const defaultSettings = {
     prefix: "!",
+       modLogChannel: "mod-log",
+  modRole: "Moderator",
+  adminRole: "Administrator",
     welcomeChannel: "welcome",
     welcomeMessage: "Say hello to {{user}}, everyone!"
   }
-  
+  client.on("guildDelete", guild => {
+  client.settings.delete(guild.id);
+});
+client.on("guildMemberAdd", member => {
+     client.settings.ensure(member.guild.id, defaultSettings);
+     welcomeMessage = welcomeMessage.replace("{{user}}", member.user.tag)
+     member.guild.channels
+    .find("name", client.settings.get(member.guild.id, "welcomeChannel"))
+    .send(welcomeMessage)
+    .catch(console.error);
+});
 client.on('ready', () => {
           client.user.setActivity("in " + client.guilds.size + " servers | Version " + version);
           });
@@ -41,6 +55,7 @@ client.on('ready', () => {
 //help
 
 client.on("message", async (message) => {
+      if(!message.guild || message.author.bot) return;
     if (message.content.startsWith(`${prefix}help`)) {
         
         var embed = new Discord.RichEmbed()
@@ -67,6 +82,11 @@ client.on("message", async (message) => {
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
+        
+         const guildConf = client.settings.ensure(message.guild.id, defaultSettings);
+          if(message.content.indexOf(guildConf.prefix) !== 0) return;
+const args = message.content.split(/\s+/g);
+  const command = args.shift().slice(guildConf.prefix.length).toLowerCase()
         
         //flip
         
@@ -162,6 +182,7 @@ client.on("message", async (message) => {
         }
         client.on('guildCreate', guild => {
             server.createChannel("welcome", "text");
+            server.createChannel("mod-log", "text");
         });
 });
 
