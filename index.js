@@ -144,7 +144,7 @@ client.on("message", async (message) => {
             let connection = await message.member.voiceChannel.join();
             let dispatcher = await connection.play(ytdl(args[0], { filter: "audioonly" }));
             message.channel.send(`<:utilicheck:556723061467119637> Now playing: ${info.title}`);
-         }
+         
 
             
     } else if (message.content.startsWith(`${prefix}version`)) {
