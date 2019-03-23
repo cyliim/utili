@@ -1,7 +1,15 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
-const prefix = ">";
+db.fetchObject(`guildPrefix_${message.guild.id}`).then( i => {
+    let prefix;
+if (i.text) {
+prefix = i.text
+} else {
+    prefix = ">"
+}
+
+const db = require("quick.db");
 var version = "1.2.12"
 //joke list
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
@@ -22,7 +30,6 @@ client.on('ready', () => {
 
 //Brickman says hi!
 
-
 //commands
 
 //help
@@ -36,7 +43,7 @@ client.on("message", async (message) => {
             .setAuthor(client.user.username, client.user.avatarURL)
             .setTitle("Help Menu")
             .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
-            .addField("The prefix for this server is ", prefix)
+            .addField("The prefix for this server is ", i.text)
             .addField("**Help**", "This command shows the help menu.")
             .addField("**Flip**", "Flips a coin.")
             .addField("**Roll**", "Rolls a die.")
@@ -55,8 +62,19 @@ client.on("message", async (message) => {
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(embed);
- 
-        
+    } else if (message.content.startsWith(`${prefix}prefix`)) {
+        if (message.channel.type != "text") return message.channel.send("<:utilicross:556723032400461824> This command is only avaliable in a guild!")
+exports.run = (bot, message, args, func => {
+    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("<:utilicross:556723032400461824> You need the Adminstrator permission to do this!")
+    if (!args.join(" ")) return message.channel.send("<:utilicross:556723032400461824> Please enter a prefx after the command")
+
+    db.updateTest(`guildPrefix_${message.guild.id}`, args.join().trim()).then(i => {
+
+        message.channel.send("<:utilicheck:556723061467119637> Prefix changed to " + i.text);
+
+    })
+})
+
         //flip
         
     } else if (message.content.startsWith(`${prefix}flip`)) {
@@ -149,7 +167,7 @@ client.on("message", async (message) => {
                 (message.channel.send("<:utilicross:556723032400461824> Nothing to see here just yet!")) 
             }
         }
-
+    })
 });
 
 
