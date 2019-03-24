@@ -36,7 +36,7 @@ client.on('ready', () => {
 
 client.on("message", async (message) => {
 
-    if (message.content.startsWith(`${prefix}help`)) {
+    if (message.content.startsWith(`i.texthelp`)) {
         
         var embed = new Discord.RichEmbed()
             .setColor(0x252629)
