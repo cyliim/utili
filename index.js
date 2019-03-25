@@ -138,7 +138,7 @@ client.on("message", async (message) => {
         message.author.sendMessage("Utili is currently on version " + version);
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
-                 
+    } else if (message.content.startsWith (`${prefix}modhelp)) {                
         var modhelp = new Discord.RichEmbed()
             .setColor(0x252629)
             .setAuthor(client.user.username, client.user.avatarURL)
