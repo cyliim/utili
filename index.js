@@ -35,7 +35,7 @@ client.on("message", async (message) => {
             .setAuthor(client.user.username, client.user.avatarURL)
             .setTitle("Help Menu")
             .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
-            .addField("The prefix for this server is ", i.text)
+            .addField("The prefix for this server is ", prefix)
             .addField("**Help**", "This command shows the help menu.")
             .addField("**Flip**", "Flips a coin.")
             .addField("**Roll**", "Rolls a die.")
