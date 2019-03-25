@@ -145,10 +145,10 @@ client.on("message", async (message) => {
             .setTitle("Modhelp Menu")
             .setDescription("The moderator help menu")
             .addField("The prefix for this server is ", prefix)
-            .addField("**Modhelp**, Brings up this help menu")
-            .addField("**Kick**, Kicks a member. Requires the `Kick` permission")
-            .addField("**Ban**, Bans a member. Requires the `Ban` permission")
-            .addField("***IMPORTANT!!***, The `Utili` role must be higher than the role of the person you are banning/kicking")
+            .addField("**Modhelp**", "Brings up this help menu")
+            .addField("**Kick**", "Kicks a member. Requires the `Kick` permission")
+            .addField("**Ban**", "Bans a member. Requires the `Ban` permission")
+            .addField("***IMPORTANT!!***", "The `Utili` role must be higher than the role of the person you are banning/kicking")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(modhelp);
