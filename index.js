@@ -37,7 +37,7 @@ client.on("message", async (message) => {
             .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
             .addField("The prefix for this server is ", prefix)
             .addField("**Help**", "Shows this menu")
-            .addField("**ModHelp**", "Shows the moderator help menu")
+            .addField("**Modhelp**", "Shows the moderator help menu")
             .addField("**Flip**", "Flips a coin.")
             .addField("**Roll**", "Rolls a die.")
             .addField("**Ping**", "Gets the ping of the bot.")
@@ -138,17 +138,17 @@ client.on("message", async (message) => {
         message.author.sendMessage("Utili is currently on version " + version);
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
-    } else if (message.content.startsWith (`${prefix}modhelp)) {                
+    } else if (message.content.startsWith (`${prefix}modhelp`)) {                
         var modhelp = new Discord.RichEmbed()
             .setColor(0x252629)
             .setAuthor(client.user.username, client.user.avatarURL)
-            .setTitle("Help Menu")
-            .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
+            .setTitle("Modhelp Menu")
+            .setDescription("The moderator help menu")
             .addField("The prefix for this server is ", prefix)
-            .addField("**ModHelp**, Brings up this help menu)
-            .addField("**Kick**, Kicks a member. Requires the `Kick` permission)
-            .addField("**Ban**, Bans a member. Requires the `Ban` permission)
-            .addField("***IMPORTANT!!***, The `Utili` role must be higher than the role of the person you are banning/kicking)
+            .addField("**Modhelp**, Brings up this help menu")
+            .addField("**Kick**, Kicks a member. Requires the `Kick` permission")
+            .addField("**Ban**, Bans a member. Requires the `Ban` permission")
+            .addField("***IMPORTANT!!***, The `Utili` role must be higher than the role of the person you are banning/kicking")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(modhelp);
