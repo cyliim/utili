@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
 const prefix = ">"
-var version = "1.2.13"
+var version = "1.2.14"
 //joke list
 var rand = ["What is a sheep's favourite movie? ||Baaaaaa-ck to the future!||", "I hit my friend with a huge crystal of sodium chloride. ||I got arrested for a salt!||", "How do you add two numbers at the top of Mount Everest? ||Just summit.||", "Why did the dog say 'meow'? ||He was bilingual||", "There’s only one thing I don’t like about Halloween ||Which is...||", "Did you hear about the all-janitor baseball team? ||They swept the finals||", "A 300 page novel with a 50 page introductory essay written by the author walks into a bar. ||The bartender asks, 'Why the long preface?'||", "Why do gorillas have big nostrils? ||Because they have big fingers!||, What did the buffalo say to his son when he left for college? ||Bison||", "What is the best place to train your legs? ||Squatland Yard||"];
 //pun list
@@ -138,6 +138,22 @@ client.on("message", async (message) => {
         message.author.sendMessage("Utili is currently on version " + version);
         message.reply("sent you a dm! <:utilicheck:556723061467119637>")
 
+                 
+        var modhelp = new Discord.RichEmbed()
+            .setColor(0x252629)
+            .setAuthor(client.user.username, client.user.avatarURL)
+            .setTitle("Help Menu")
+            .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
+            .addField("The prefix for this server is ", prefix)
+            .addField("**ModHelp**, Brings up this help menu)
+            .addField("**Kick**, Kicks a member. Requires the `Kick` permission)
+            .addField("**Ban**, Bans a member. Requires the `Ban` permission)
+            .addField("***IMPORTANT!!***, The `Utili` role must be higher than the role of the person you are banning/kicking)
+            .setTimestamp()
+            .setFooter("Created by Brickman#4669", client.user.avatarURL);
+        message.channel.send(modhelp);
+  
+              
         //dev commands
 
         //dev help
