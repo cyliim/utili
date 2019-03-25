@@ -148,7 +148,7 @@ client.on("message", async (message) => {
             .addField("**Modhelp**, Brings up this help menu")
             .addField("**Kick**, Kicks a member. Requires the `Kick` permission")
             .addField("**Ban**, Bans a member. Requires the `Ban` permission")
-            .addField("***IMPORTANT!!***, The `Utili` role must be higher than the role of the person you are banning/kicking")
+            .addField("***IMPORTANT!!***, The `Utili` role must be higher than the role of the person you are banning/kicking, If this is not the case, the bot won't be able to ban/kick the person.")
             .setTimestamp()
             .setFooter("Created by Brickman#4669", client.user.avatarURL);
         message.channel.send(modhelp);
