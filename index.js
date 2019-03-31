@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = process.env.token;
+const args = message.content.split(" ").slice(1);
 const prefix = ">"
 var version = "1.2.15"
 //joke list
@@ -163,9 +164,22 @@ client.on("message", async (message) => {
             message.channel.send("<:utilicross:556723032400461824> You are not the developer!"); 
                 } else if (message.author.id === '443992049746968586') {
                 (message.channel.send("<:utilicross:556723032400461824> Nothing to see here just yet!")) 
-            }
-        }
-    })
+            } else if (message.content.startsWith(`${prefix}eval`)) {
+                      if (message.author.id !== '443992049746968586') {
+                      try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+ 
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+ 
+      message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    }
+  }
+}
+    }});
 
 
 
