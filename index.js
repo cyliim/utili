@@ -166,7 +166,7 @@ client.on("message", async (message) => {
                 } else if (message.author.id === '443992049746968586') {
                 (message.channel.send("<:utilicross:556723032400461824> Nothing to see here just yet!")) 
             
-    });
+    }}});
 
 
 
