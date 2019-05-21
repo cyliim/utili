@@ -34,7 +34,7 @@ client.on("message", async (message) => {
             .setColor(0x252629)
             .setAuthor(client.user.username, client.user.avatarURL)
             .setTitle("Help Menu")
-            .setDescription("The Help Menu for [Utili](https://brickman.glitch.me/utili.html)")
+            .setDescription("The Help Menu for Utili")
             .addField("The prefix for this server is ", prefix)
             .addField("**Help**", "Shows this menu")
             .addField("**Modhelp**", "Shows the moderator help menu")
@@ -53,7 +53,7 @@ client.on("message", async (message) => {
             .addField("**Version**", "DM's you with bot version")
             .addField("**Support**", "Join the support server [here](https://discord.gg/QHqJxMm).")
             .setTimestamp()
-            .setFooter("Created by Brickman#4669", client.user.avatarURL);
+            .setFooter("Created by cyliim#4669", client.user.avatarURL);
         message.channel.send(embed);
   
 
@@ -150,7 +150,7 @@ client.on("message", async (message) => {
             .addField("**Ban**", "Bans a member. Requires the `Ban` permission")
             .addField("***IMPORTANT!!***", "The `Utili` role must be higher than the role of the person you are banning/kicking")
             .setTimestamp()
-            .setFooter("Created by Brickman#4669", client.user.avatarURL);
+            .setFooter("Created by cyliim#4669", client.user.avatarURL);
         message.channel.send(modhelp);
   
               
